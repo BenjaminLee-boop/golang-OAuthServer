@@ -3,6 +3,7 @@ package db
 import (
 	"log"
 
+	"github.com/BenjaminLee-boop/golang-OAuthServer/src/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
@@ -16,7 +17,7 @@ func Init() *gorm.DB {
 		log.Fatalln(err)
 	}
 
-	db.AutoMigrate(&Models.User{})
+	db.AutoMigrate(&models.User{})
 
 	return db
 }
